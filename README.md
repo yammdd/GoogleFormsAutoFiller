@@ -1,7 +1,7 @@
 # Google Forms Auto Filler
 
 ## Mô tả
-**Google Form Auto Filler** là một công cụ tự động điền biểu mẫu Google Form dựa trên các thông tin được cung cấp sẵn. Công cụ giúp tiết kiệm thời gian và công sức khi làm việc với các biểu mẫu trực tuyến.
+**Google Forms Auto Filler** là một công cụ tự động điền biểu mẫu Google Form dựa trên các thông tin được cung cấp sẵn. Công cụ giúp tiết kiệm thời gian và công sức khi làm việc với các biểu mẫu trực tuyến.
 
 ## Tính năng
 - Tự động điền các trường trong Google Form.
