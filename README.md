@@ -31,8 +31,11 @@ pip install selenium
 
 - Để chạy chương trình:
 ```bash
-python auto_filler.py
+python Main.py
 ```
 
 - Điền URL của mẫu, số lượng và các lựa chọn khác
 - Nhấn **Bắt đầu** để khởi động và **Dừng** khi cần thiết hoặc gặp lỗi
+
+## Lưu ý
+Không áp dụng với các mẫu yêu cầu đăng nhập tài khoản
