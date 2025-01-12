@@ -1,6 +1,6 @@
 import threading
 from PyQt6 import QtCore, QtGui, QtWidgets
-from Survey import Survey  # Đảm bảo Survey đã được triển khai đầy đủ
+from Survey import Survey
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -25,7 +25,6 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-        # Biến lưu trữ Survey và luồng
         self.survey = None
         self.survey_thread = None
 
@@ -145,6 +144,7 @@ class Ui_MainWindow(object):
 
     def on_start_button_clicked(self):
         """Handle start button click."""
+        self.text_display.clear()
         url = self.get_url.text()
         responses = self.input_quantity.value()
         choice_answers = self.input_choices.toPlainText().split(", ")
@@ -155,10 +155,8 @@ class Ui_MainWindow(object):
         if input_text == "\n":
             input_text = ""
 
-        # Tạo đối tượng Survey và lưu trữ để dừng
-        self.survey = Survey("data/chromedriver.exe", url, responses, ui=self)
+        self.survey = Survey("../data/chromedriver.exe", url, responses, ui=self)
 
-        # Chạy survey trong luồng riêng
         self.survey_thread = threading.Thread(target=self.survey.start, args=(choice_answers, input_text), daemon=True)
         self.survey_thread.start()
         self.add_item_to_list_widget("Chương trình đã bắt đầu.")
@@ -166,7 +164,7 @@ class Ui_MainWindow(object):
     def on_stop_button_clicked(self):
         """Handle stop button click."""
         if self.survey:
-            self.survey.quit_anyway()  # Dừng đối tượng Survey
+            self.survey.quit_anyway()
             self.add_item_to_list_widget("Dừng, đang xử lý mẫu cuối.")
 
     def add_item_to_list_widget(self, item):
