@@ -28,3 +28,11 @@ pip install selenium
 - Chuyển tệp chromedriver.exe vào thư mục data
 
 ## Hướng dẫn sử dụng
+
+- Để chạy chương trình:
+```bash
+python auto_filler.py
+```
+
+- Điền URL của mẫu, số lượng và các lựa chọn khác
+- Nhấn **Bắt đầu** để khởi động và **Dừng** khi cần thiết hoặc gặp lỗi
