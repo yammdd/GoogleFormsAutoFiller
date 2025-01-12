@@ -164,7 +164,7 @@ class Survey:
                         self.submit_form()
                         break
                 if self.ui:
-                    self.ui.add_item_to_list_widget(f"Đã gửi. Tổng số phản hồi: {self.complete}/{self.target_response}")
+                    self.ui.add_item_to_list_widget(f"Tiến độ {self.complete}/{self.target_response}.")
                     QApplication.processEvents()
             if self.ui:
                 self.ui.add_item_to_list_widget(f"Hoàn thành. Tổng số phản hồi: {self.complete}/{self.target_response}")
@@ -181,18 +181,5 @@ class Survey:
         """Close the browser."""
         self.stop.set()
 
-
-# Setup and run the survey automation
-def run_survey(url, response_number, answers_list, input_text, ui=None):
-    """Run the survey automation."""
-    path = "data/chromedriver.exe"  # ChromeDriver path
-    survey = Survey(path, url, response_number, ui=ui)
-    survey.start(answers_list, input_text)
-
-def quit_browser(url, response_number, ui=None):
-    """Close the browser."""
-    path = "data/chromedriver.exe"  # ChromeDriver path
-    survey = Survey(path, url, response_number, ui=ui)
-    survey.quit_anyway()
 
 
